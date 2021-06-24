@@ -1,0 +1,53 @@
+h1 {
+    font-size: 300%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+h2 {
+    font-size: 200%;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+
+main {
+
+}
+
+#password-div {
+
+    height: 300px;
+    width: 600px;
+    margin-bottom: 1%;
+    margin: 0 auto;
+    border: dotted;
+}
+
+#button-div {
+    margin-top: 2%;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    left: 45%;
+}
+
+
+p {
+    width: 80%;
+    text-align: center;
+    margin: 3%;
+    margin-top: 18%;
+    max-width: 80%;
+}
+
+p {
+    width: 80%;
+    text-align: center;
+    margin: 3%;
+    margin-top: 18%;
+    max-width: 80%;
+    word-wrap: break-word;
+}
