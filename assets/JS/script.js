@@ -1,5 +1,9 @@
 var generateButton = document.querySelector("#generate-button");
 
+var lowercase = false
+var uppercase = false
+var numbers = false
+var specialcharacters = false
 var lowercaseString = 'abcdefghijklmnopqrstuvwxyz'
 var uppercaseString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var specialcharactersString = "(!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)"
@@ -13,17 +17,15 @@ function getRandomInt(max) {
 
 
 function userInput() {
+    document.getElementById("password").textContent = ''
     var userInput = false
     var userNumber = false
-    var lowercase = false
-    var uppercase = false
-    var numbers = false
-    var specialcharacters = false
+    var numCharacter
     //Check how many characters the user wants in the password
     while(userNumber === false) {
-        var numCharacters = parseInt(prompt(`How many characters do you want in the password (choose between 8 and 128)`))
+        numCharacters = parseInt(prompt(`How many characters do you want in the password (choose between 8 and 128)`))
 
-        if(numCharacters > 8 && numCharacters < 128) {
+        if(numCharacters >= 8 && numCharacters <= 128) {
             userNumber = true;
         }
         else {
@@ -64,15 +66,18 @@ function userInput() {
         }
         if(numbers) {
             passwordString += numbersString
+            console.log(numbersString)
         }
         if(specialcharacters) {
             passwordString += specialcharactersString
-        }
 
+        }
         passwordString = passwordString.split('')
+        console.log(passwordString)
         
         for (let i = 0; i < numCharacters; i++) {
-            var randomNumber = getRandomInt(numCharacters)
+            var randomNumber = getRandomInt(passwordString.length -1)
+            console.log(randomNumber)
             finalString += passwordString[randomNumber]   
         }
         
